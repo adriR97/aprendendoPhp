@@ -38,6 +38,9 @@
 	var_dump($a == $b);                        //verificando se os valores são iguais
 	echo "<br/>";
 	var_dump($a != $b);                        //verificando se são diferentes
+	echo "<br/>";
+
+	echo ($a > $b) ? "A é maior" : "B é maior";  //operador ternário
 
 
 	//Novos operadores php7
