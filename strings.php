@@ -9,5 +9,7 @@
 	echo strpos($nome, "rodrigues") . "<br/>";              //índice da palavra(posição)  
 	echo substr($nome, 0, 9) . "<br/>";                     //imprimindo do início até a posição indicada (9)  
 	echo substr($nome, 4) . "<br/>";                        //imprimindo da posição indicada até o final 
-	echo strlen($nome);                                     //quantidade de caracteres 
+	echo strlen($nome) . "<br/>";                           //quantidade de caracteres 
+	echo str_word_count($nome) . "<br/>";                   //quantidade de palavras
+	echo strrev($nome) . "<br/>";                           //inverte as palavras
 ?>
