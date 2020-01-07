@@ -9,7 +9,7 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function teste2(){
-		$argumentos = func_get_args();                       //pega todos os argumentos que estão sendo passados para a função
+		$argumentos = func_get_args();   //pega todos os argumentos que estão sendo passados para a função             
 		return $argumentos;
 	}
 

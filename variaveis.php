@@ -1,21 +1,38 @@
 <?php
-	$nome = "Adriane";                             //criando a variável
+	$nome = "Adriane";                             //criando a variável global
 	$sobrenome = "Rodrigues";					   //string
 	$ano = 1997;                                   //int
-	$salario = 3500.00;                            //double
+	$salario = 3500.00;                            //float
+	$solteira = true;                              //booleano
 	$nomeCompleto = $nome . " " . $sobrenome;      //concatenação
 
-	echo $nomeCompleto;                            //imprimindo
+	//imprimindo
+	echo $nomeCompleto;                            
+	echo "<br/>";
+	print $ano;
+	print "<br>";
+
+	//exibindo informações(tipo, qtd caracteres e variável)
+	var_dump($nome);                               
 	echo "<br/>";
 
-	var_dump($nome);              //exibindo informações(tipo, qtd caracteres e variável)
-	echo "<br/>";
+	//limpando a variável
+	unset($nome);                                  
 
-	unset($nome);                                  //limpando a variável
-
-	if(isset($nome)){                              //se a variável existir
+	#verificando se a variável existe
+	if(isset($nome)){                           
 		echo $nome;
 	} elseif (isset($sobrenome)) {
 		echo $sobrenome;
 	}
+
+	echo "<br/>";
+
+	//passando uma variável global para um método
+	function teste(){
+		global $sobrenome;	
+		echo "Adriane " . $sobrenome;	
+	}
+
+	teste();
 ?>

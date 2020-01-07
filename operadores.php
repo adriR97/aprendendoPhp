@@ -5,9 +5,9 @@
 	echo $nome . " Rodrigues<br/>";            //. -> concatenação
 
 	$valorTotal = 0;
-	$valorTotal += 100;                        //+= -> soma
+	$valorTotal += 100;                        //+= -> variavel = variavel + 100
 	echo $valorTotal . "<br/>";                
-	$valorTotal -= 25;                         //-= -> subtração
+	$valorTotal -= 25;                         //-= -> variavel = variavel - 100
 	echo $valorTotal . "<br/>";
 	$valorTotal *= 0.8;                        //*= -> porcentagem
 	echo $valorTotal;
@@ -58,11 +58,19 @@
 	echo $c ?? $d ?? $e;                       //vai imprimir o primeiro valor não nulo
 
 
-	//Novos operadores php7
+	//Operadores incrementais e decrementais
 	echo "<br/><br/><b>Operadores incrementais e decrementais:</b><br/>";
 	$a = 10;
 
 	echo ++$a;                                 //incrimentando
 	echo "<br/>";
 	echo --$a;                                 //decrementando
+
+
+	//Operadores Lógicos
+
+	# $a && $b --> e
+	# $a || $b --> ou
+	# !$a --> não
+
 ?>

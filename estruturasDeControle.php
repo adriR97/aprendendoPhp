@@ -4,7 +4,7 @@
 
 	if($a > $b){
 		echo "A é maior";
-	} else if($a < $b) {
+	} elseif($a < $b) {
 		echo "B é maior";
 	} else{
 		echo "Os dois são iguais";

@@ -1,0 +1,7 @@
+<?php
+	// comentário
+	#  comentário
+	/*
+		comentário
+	*/
+?>
