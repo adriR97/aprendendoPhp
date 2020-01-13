@@ -1,4 +1,5 @@
 <?php
+	//compartilhamento de atributos e métodos
 	class Documento{
 		private $numero;
 
