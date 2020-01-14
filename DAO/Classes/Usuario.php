@@ -37,6 +37,16 @@
 			$this->dtcadastro = $value;
 		}
 
+		public function setData($data){
+			#setando os dados 
+			$this->setIdUsuario($data['idusuario']);
+			$this->setDeslogin($data['deslogin']);
+			$this->setDessenha($data['dessenha']);
+			$this->setDtcadastro(new DateTime($data['dtcadastro']));	
+		}
+
+		//----------------------------------------------Métodos de busca------------------------------------------------------------------->
+
 		public function loadById($id){
 			#trazendo um resultado pelo id do registro
 			$sql = new Sql();
@@ -45,13 +55,7 @@
 			));
 
 			if(count($results) > 0){
-				$row = $results[0];
-
-				$this->setIdUsuario($row['idusuario']);
-				$this->setDeslogin($row['deslogin']);
-				$this->setDessenha($row['dessenha']);
-				$this->setDtcadastro(new DateTime($row['dtcadastro']));
-
+				$this->setData($results[0]);
 			}
 		}
 
@@ -78,16 +82,44 @@
 			));
 
 			if(count($results) > 0){
-				$row = $results[0];
-
-				$this->setIdUsuario($row['idusuario']);
-				$this->setDeslogin($row['deslogin']);
-				$this->setDessenha($row['dessenha']);
-				$this->setDtcadastro(new DateTime($row['dtcadastro']));
+				$this->setData($results[0]);
 			} else{
 				throw new Exception("Login e/ou senha incorreto(s).");				
 			}
 		}
+
+		//----------------------------------------------Métodos de inserção---------------------------------------------------------------->
+
+		public function insert(){
+			$sql = new Sql();
+
+			//chamando a procedure (CALL=MySql e EXECUTE=SqlServer)
+			$results = $sql->select("CALL sp_usuarios_insert(:LOGIN, :SENHA)", array(
+				':LOGIN'=>$this->getDeslogin(),
+				':SENHA'=>$this->getDessenha()
+			));
+
+			if(count($results) > 0){
+				$this->setData($results[0]);
+			}
+		}
+
+		//----------------------------------------------Métodos de alteração--------------------------------------------------------------->
+
+		public function update($login, $senha){
+			$this->setDeslogin($login);
+			$this->setDessenha($senha);
+
+			$sql = new Sql();
+
+			$sql->query("UPDATE tb_usuarios SET deslogin=:LOGIN, dessenha=:SENHA WHERE idusuario=:ID", array(
+				':LOGIN'=>$this->getDeslogin(),
+				':SENHA'=>$this->getDessenha(),
+				':ID'=>$this->getIdusuario()
+			));
+		}
+
+		//----------------------------------------------Métodos de exclusão---------------------------------------------------------------->
 
 		public function __toString(){
 			#método para imprimir o resultado da consulta
