@@ -27,8 +27,14 @@
 	#echo $usuario;
 
 	//alterando usuario
+	#$usuario = new Usuario();
+	#$usuario->loadById(1);
+	#$usuario->update("adriane", "rodrigues");
+	#echo $usuario;
+
+	//excluindo usuário
 	$usuario = new Usuario();
-	$usuario->loadById(1);
-	$usuario->update("adriane", "rodrigues");
+	$usuario->loadById(5);
+	$usuario->delete();
 	echo $usuario;
 ?>

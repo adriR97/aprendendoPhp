@@ -121,6 +121,22 @@
 
 		//----------------------------------------------Métodos de exclusão---------------------------------------------------------------->
 
+		public function delete(){
+			$sql = new Sql();
+
+			$sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+				':ID'=>$this->getIdusuario()
+			));
+
+			//limpando as variáveis
+			$this->setIdUsuario(0);
+			$this->setDeslogin("");
+			$this->setDessenha("");
+			$this->setDtcadastro(new DateTime());
+		}
+
+		//----------------------------------------------Imprimindo------------------------------------------------------------------------->
+
 		public function __toString(){
 			#método para imprimir o resultado da consulta
 			return json_encode(array(
