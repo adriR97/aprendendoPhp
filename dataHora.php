@@ -35,7 +35,7 @@
 	echo strftime("%B") . "<br>";                        //mês
 	echo strftime("%m") . "<br>";                        //mês numérico
 	echo strftime("%Y") . "<br>";                        //ano
-	echo strftime("%D");                        //mês/dia/ano
+	echo strftime("%D");                                 //mês/dia/ano
 	echo "<br>-----------------------<br>";            
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
