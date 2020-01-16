@@ -13,7 +13,7 @@
 	//criando um arquivo do tipo csv
 	$file = fopen("usuarios.csv", "w+");
 	//escrendo o cabeçalho e separando com |
-	fwrite($file, implode("|", $cabecalho)  . "\r\n");
+	fwrite($file, implode("|", $cabecalho) . "\r\n");
 
 	foreach ($usuarios as $row) {
 		//alimentando as linhas com os dados dos usuários
