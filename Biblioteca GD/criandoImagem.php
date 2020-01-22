@@ -14,7 +14,7 @@
 
 	//escrevendo na tela
 	/*
-		imagem, tamanho da fonte (1 a 5), margem esquerda, margem de cima, frase, cor
+		imagem, tamanho da fonte, margem esquerda, margem de cima, frase, cor
 	*/
 	imagestring($image, 5, 40, 120, "Athletico Paranaense", $red);
 
